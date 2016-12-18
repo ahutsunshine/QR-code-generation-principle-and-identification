@@ -1,8 +1,14 @@
 关键字：二维码 二维码生成 生成原理 识别 识别过程
 # 二维码生成原理和识别的学习
+##基本介绍
+我们之所以对二维码进行扫描能读出那么多信息，就是因为这些信息被编入了二维码之中。制作二维码输入的信息可以分成三类，文本信息，比如名片信息；字符信息，比如网址、电话号码；还有图片信息，甚至还可以包括简短的视频。数据信息是怎么被编入的呢？信息输入后，首先要选择一种信息编码的码制。现在常见的二维码都是以QR码作为编码的码制。QR码是矩阵式二维码，它是在一个矩形空间内，通过黑、白像素在矩阵中的不同分布，来进行编码的。我们知道电脑使用二进制（0和1）数来贮存和处理数据，而在二维码中，用黑白矩形表示二进制数据我们肉眼能看到的黑色表示的是二进制“1”，白色表示二进制的“0”，黑白的排列组合确定了矩阵式二维条码的内容，以便于计算机对二维码符号进行编码和分析。
 ##基础知识
 二维码一共有40个尺寸。官方叫版本Version。Version 1是21 x 21的矩阵，Version 2是 25 x 25的矩阵，Version 3是29的尺寸，每增加一个version，就会增加4的尺寸，公式是：**(V-1)*4 + 21**（V是版本号） 最高Version 40，(40-1)*4+21 = 177，所以最高是177 x 177 的正方形。
 
+下面我们看看一个二维码的样例：
+![](http://coolshell.cn//wp-content/uploads/2013/10/QR-Code-Overview.jpeg)
+
+![](https://yqall02.baidupcs.com/file/e48dc0027ad5c15b2e28a8194682245e?bkt=p3-1400e48dc0027ad5c15b2e28a8194682245e987a1f2700000001423c&fid=3407542590-250528-246052364793632&time=1482070076&sign=FDTAXGERLBH-DCb740ccc5511e5e8fedcff06b081203-WZ5IWeg02RZIX4kLKptzZ5sKSpw%3D&to=yqhb&fm=Yan,B,T,t&sta_dx=82492&sta_cs=&sta_ft=png&sta_ct=0&sta_mt=0&fm2=Yangquan,B,T,t&newver=1&newfm=1&secfm=1&flow_ver=3&pkey=1400e48dc0027ad5c15b2e28a8194682245e987a1f2700000001423c&sl=76480590&expires=8h&rt=pr&r=184796598&mlogid=8185261892117311830&vuk=3407542590&vbdid=1988581034&fin=%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%BB%93%E6%9E%84_cn.png&fn=%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%BB%93%E6%9E%84_cn.png&slt=pm&uta=0&rtype=1&iv=0&isw=0&dp-logid=8185261892117311830&dp-callid=0.1.1&hps=1&csl=80&csign=u0NUuWdrlFBWrNRnMBKYOawXXB0%3D)
 ### 定位图案
 * Position Detection Pattern是定位图案，用于标记二维码的矩形大小。这三个定位图案有白边叫Separators for Postion Detection Patterns。之所以三个而不是四个意思就是三个就可以标识一个矩形了。
 * Timing Patterns也是用于定位的。原因是二维码有40种尺寸，尺寸过大了后需要有根标准线，不然扫描的时候可能会扫歪了。
