@@ -33,7 +33,7 @@
 
 ## 纠错码
 
-上面我们说到了一些**纠错级别（Error Correction Code Level）**，二维码中有四种级别的纠错，这就是为什么二维码有残缺还能扫出来。
+上面我们说到了一些**纠错级别（Error Correction Code Level）**，也就是说，如果你在生成二维码时选择H档容错度，即使30%的图案被遮挡，也可以被正确扫描。这就是为什么二维码有残缺以及二维码中央都可以加上LOGO还能扫出来的原因。
 
 **错误修正容量**
 
@@ -150,9 +150,11 @@ Version Information一共是18个bits，其中包括6个bits的版本号以及12
 
 ### 掩码图案
 这样下来，我们的图就填好了，但是，也许那些点并不均衡，如果出现大面积的空白或黑块，会告诉我们扫描识别的困难。所以，我们还要做Masking操作,QR有8个Mask你可以使用，如下所示：其中，各个mask的公式在各个图下面。所谓mask，说白了，就是和上面生成的图做XOR(异或)操作。Mask只会和数据区进行XOR，不会影响功能区。**（注：选择一个合适的Mask也是有算法的）**
+
 ![](http://coolshell.cn//wp-content/uploads/2013/10/masking-pattern.png)
 
 其Mask的标识码如下所示：（其中的i,j分别对应于上图的x,y）
+
 ![](http://coolshell.cn//wp-content/uploads/2013/10/Mask-Pattern-Code.png)
 
 下面是Mask后的一些样子，我们可以看到被某些Mask XOR了的数据变得比较零散了。
