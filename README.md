@@ -165,3 +165,8 @@ Mask过后的二维码就成最终的图了。
 ## 总结
 **扫描二维码返回结果是一串字符串，这个字符串可能是文本信息，也可能是一个网址（包含图片、文件、名片等信息）。**
 二维码中存储的信息通常都经过了纠错编码，这意味着二维码是有冗余的。因为一个二维码所能表示的比特数是固定的，它包含的信息越多那么冗余度就越小；相反，它包含的信息越少冗余度就越大。一个微信二维码中包含的信息量并不需要很大（一个微信ID即可），这意味着编码的冗余度可以做得较高。这种情况下，即使二维码只有一部分被扫描到，也能正确的被解码。
+
+## 二维码识别原理
+* [识别方法](https://github.com/ahutsunshine/QR-code-generation-principle-and-identification/blob/master/%E4%BA%8C%E7%BB%B4%E7%A0%81%E8%AF%86%E5%88%AB%E6%96%B9%E6%B3%95%E6%96%87%E7%8C%AE.pdf)请参考文献:https://github.com/ahutsunshine/QR-code-generation-principle-and-identification/blob/master/%E4%BA%8C%E7%BB%B4%E7%A0%81%E8%AF%86%E5%88%AB%E6%96%B9%E6%B3%95%E6%96%87%E7%8C%AE.pdf
+
+* 谷歌提供的zxing扫描二维码和识别图片二维码 请参考这篇[博客](http://iluhcm.com/2016/01/08/scan-qr-code-and-recognize-it-from-picture-fastly-using-zxing/)：http://iluhcm.com/2016/01/08/scan-qr-code-and-recognize-it-from-picture-fastly-using-zxing/
